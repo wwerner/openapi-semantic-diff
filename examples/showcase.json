@@ -8,8 +8,8 @@
       "change_type": "modified",
       "severity": "additive",
       "message": "version changed from '1.0.0' to '2.0.0'",
-      "old_value": 1.0.0,
-      "new_value": 2.0.0
+      "old_value": "1.0.0",
+      "new_value": "2.0.0"
     },
     {
       "path": "paths./users.GET.parameters.limit.query",
@@ -79,17 +79,17 @@
       "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.role.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "viewer" removed",
-      "old_value": viewer,
+      "message": "enum value \"viewer\" removed",
+      "old_value": "viewer",
       "new_value": null
     },
     {
       "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.role.enum",
       "change_type": "added",
       "severity": "additive",
-      "message": "enum value "moderator" added",
+      "message": "enum value \"moderator\" added",
       "old_value": null,
-      "new_value": moderator
+      "new_value": "moderator"
     },
     {
       "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.avatar_url",
@@ -143,17 +143,17 @@
       "path": "paths./users.POST.responses.201.content.application/json.schema.properties.role.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "viewer" removed",
-      "old_value": viewer,
+      "message": "enum value \"viewer\" removed",
+      "old_value": "viewer",
       "new_value": null
     },
     {
       "path": "paths./users.POST.responses.201.content.application/json.schema.properties.role.enum",
       "change_type": "added",
       "severity": "additive",
-      "message": "enum value "moderator" added",
+      "message": "enum value \"moderator\" added",
       "old_value": null,
-      "new_value": moderator
+      "new_value": "moderator"
     },
     {
       "path": "paths./users.POST.responses.201.content.application/json.schema.properties.avatar_url",
@@ -199,17 +199,17 @@
       "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.role.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "viewer" removed",
-      "old_value": viewer,
+      "message": "enum value \"viewer\" removed",
+      "old_value": "viewer",
       "new_value": null
     },
     {
       "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.role.enum",
       "change_type": "added",
       "severity": "additive",
-      "message": "enum value "moderator" added",
+      "message": "enum value \"moderator\" added",
       "old_value": null,
-      "new_value": moderator
+      "new_value": "moderator"
     },
     {
       "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.avatar_url",
@@ -287,17 +287,17 @@
       "path": "components.schemas.User.properties.role.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "viewer" removed",
-      "old_value": viewer,
+      "message": "enum value \"viewer\" removed",
+      "old_value": "viewer",
       "new_value": null
     },
     {
       "path": "components.schemas.User.properties.role.enum",
       "change_type": "added",
       "severity": "additive",
-      "message": "enum value "moderator" added",
+      "message": "enum value \"moderator\" added",
       "old_value": null,
-      "new_value": moderator
+      "new_value": "moderator"
     },
     {
       "path": "components.schemas.User.properties.avatar_url",

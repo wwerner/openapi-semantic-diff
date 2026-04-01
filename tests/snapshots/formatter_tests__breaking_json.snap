@@ -12,23 +12,23 @@ expression: output
       "change_type": "modified",
       "severity": "additive",
       "message": "version changed from '1.0.0' to '2.0.0'",
-      "old_value": 1.0.0,
-      "new_value": 2.0.0
+      "old_value": "1.0.0",
+      "new_value": "2.0.0"
     },
     {
       "path": "info.description",
       "change_type": "modified",
       "severity": "additive",
       "message": "description changed",
-      "old_value": A sample pet store API,
-      "new_value": A sample pet store API (v2 — breaking changes)
+      "old_value": "A sample pet store API",
+      "new_value": "A sample pet store API (v2 — breaking changes)"
     },
     {
       "path": "servers.https://api.example.com/v1",
       "change_type": "removed",
       "severity": "breaking",
       "message": "server 'https://api.example.com/v1' removed",
-      "old_value": https://api.example.com/v1,
+      "old_value": "https://api.example.com/v1",
       "new_value": null
     },
     {
@@ -44,16 +44,16 @@ expression: output
       "change_type": "modified",
       "severity": "breaking",
       "message": "type changed from 'integer' to 'string'",
-      "old_value": integer,
-      "new_value": string
+      "old_value": "integer",
+      "new_value": "string"
     },
     {
       "path": "paths./pets.GET.responses.200.content.application/json.schema.items.properties.id.format",
       "change_type": "modified",
       "severity": "breaking",
       "message": "format changed from 'int64' to 'uuid'",
-      "old_value": int64,
-      "new_value": uuid
+      "old_value": "int64",
+      "new_value": "uuid"
     },
     {
       "path": "paths./pets.GET.responses.200.content.application/json.schema.items.properties.name",
@@ -67,8 +67,8 @@ expression: output
       "path": "paths./pets.GET.responses.200.content.application/json.schema.items.properties.status.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "sold" removed",
-      "old_value": sold,
+      "message": "enum value \"sold\" removed",
+      "old_value": "sold",
       "new_value": null
     },
     {
@@ -76,7 +76,7 @@ expression: output
       "change_type": "removed",
       "severity": "breaking",
       "message": "enum value 'sold' removed from x-extensible-enum",
-      "old_value": sold,
+      "old_value": "sold",
       "new_value": null
     },
     {
@@ -108,16 +108,16 @@ expression: output
       "change_type": "modified",
       "severity": "breaking",
       "message": "type changed from 'integer' to 'string'",
-      "old_value": integer,
-      "new_value": string
+      "old_value": "integer",
+      "new_value": "string"
     },
     {
       "path": "paths./pets.POST.responses.201.content.application/json.schema.properties.id.format",
       "change_type": "modified",
       "severity": "breaking",
       "message": "format changed from 'int64' to 'uuid'",
-      "old_value": int64,
-      "new_value": uuid
+      "old_value": "int64",
+      "new_value": "uuid"
     },
     {
       "path": "paths./pets.POST.responses.201.content.application/json.schema.properties.name",
@@ -131,8 +131,8 @@ expression: output
       "path": "paths./pets.POST.responses.201.content.application/json.schema.properties.status.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "sold" removed",
-      "old_value": sold,
+      "message": "enum value \"sold\" removed",
+      "old_value": "sold",
       "new_value": null
     },
     {
@@ -140,7 +140,7 @@ expression: output
       "change_type": "removed",
       "severity": "breaking",
       "message": "enum value 'sold' removed from x-extensible-enum",
-      "old_value": sold,
+      "old_value": "sold",
       "new_value": null
     },
     {
@@ -148,16 +148,16 @@ expression: output
       "change_type": "modified",
       "severity": "breaking",
       "message": "type changed from 'integer' to 'string'",
-      "old_value": integer,
-      "new_value": string
+      "old_value": "integer",
+      "new_value": "string"
     },
     {
       "path": "paths./pets/{petId}.GET.responses.200.content.application/json.schema.properties.id.format",
       "change_type": "modified",
       "severity": "breaking",
       "message": "format changed from 'int64' to 'uuid'",
-      "old_value": int64,
-      "new_value": uuid
+      "old_value": "int64",
+      "new_value": "uuid"
     },
     {
       "path": "paths./pets/{petId}.GET.responses.200.content.application/json.schema.properties.name",
@@ -171,8 +171,8 @@ expression: output
       "path": "paths./pets/{petId}.GET.responses.200.content.application/json.schema.properties.status.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "sold" removed",
-      "old_value": sold,
+      "message": "enum value \"sold\" removed",
+      "old_value": "sold",
       "new_value": null
     },
     {
@@ -180,7 +180,7 @@ expression: output
       "change_type": "removed",
       "severity": "breaking",
       "message": "enum value 'sold' removed from x-extensible-enum",
-      "old_value": sold,
+      "old_value": "sold",
       "new_value": null
     },
     {
@@ -204,16 +204,16 @@ expression: output
       "change_type": "modified",
       "severity": "breaking",
       "message": "type changed from 'integer' to 'string'",
-      "old_value": integer,
-      "new_value": string
+      "old_value": "integer",
+      "new_value": "string"
     },
     {
       "path": "components.schemas.Pet.properties.id.format",
       "change_type": "modified",
       "severity": "breaking",
       "message": "format changed from 'int64' to 'uuid'",
-      "old_value": int64,
-      "new_value": uuid
+      "old_value": "int64",
+      "new_value": "uuid"
     },
     {
       "path": "components.schemas.Pet.properties.name",
@@ -227,8 +227,8 @@ expression: output
       "path": "components.schemas.Pet.properties.status.enum",
       "change_type": "removed",
       "severity": "breaking",
-      "message": "enum value "sold" removed",
-      "old_value": sold,
+      "message": "enum value \"sold\" removed",
+      "old_value": "sold",
       "new_value": null
     },
     {
@@ -236,7 +236,7 @@ expression: output
       "change_type": "removed",
       "severity": "breaking",
       "message": "enum value 'sold' removed from x-extensible-enum",
-      "old_value": sold,
+      "old_value": "sold",
       "new_value": null
     },
     {

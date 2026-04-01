@@ -5,12 +5,12 @@
   "changes": [
     {% for change in changes -%}
     {
-      "path": "{{ change.path }}",
+      "path": {{ change.path | json_encode() }},
       "change_type": "{{ change.change_type }}",
       "severity": "{{ change.severity }}",
-      "message": "{{ change.message }}",
-      "old_value": {{ change.old_value | default(value="null") }},
-      "new_value": {{ change.new_value | default(value="null") }}
+      "message": {{ change.message | json_encode() }},
+      "old_value": {{ change.old_value | json_encode() }},
+      "new_value": {{ change.new_value | json_encode() }}
     }{% if not loop.last %},{% endif %}
     {% endfor -%}
   ]
