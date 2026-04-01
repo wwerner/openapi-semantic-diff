@@ -1,0 +1,37 @@
+{#- markdown.tera — Markdown output template -#}
+{#- Severity emoji: breaking=🔴 deprecated=🟡 additive=🟢 -#}
+{#- Change-type emoji: added=➕ removed=➖ modified=✏️ (deprecated has no extra emoji) -#}
+{%- if grouped.total_changes == 0 %}
+## No Changes
+
+No changes detected between the two specifications.
+{%- else %}
+## API Changes
+
+**{{ grouped.total_changes }}** change(s) detected | Max severity: **{{ grouped.max_severity }}**
+{% if grouped.paths | length > 0 %}
+## Paths
+{% for path_group in grouped.paths %}
+### `{{ path_group.route }}`
+{% for verb_group in path_group.verb_groups %}
+#### {{ verb_group.verb }}
+{% for prop_group in verb_group.property_groups %}
+{% for change in prop_group.changes -%}
+- {% if change.severity == "breaking" %}🔴{% elif change.severity == "deprecated" %}🟡{% else %}🟢{% endif %}{% if change.change_type == "added" %}➕{% elif change.change_type == "removed" %}➖{% elif change.change_type == "modified" %}✏️{% endif %} {{ change.message }}{% if prop_group.property %} — `{{ prop_group.property }}`{% endif %}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endif -%}
+{%- if grouped.metadata | length > 0 %}
+## Metadata
+{% for meta_group in grouped.metadata %}
+### {{ meta_group.label }}
+{% for prop_group in meta_group.property_groups %}
+{% for change in prop_group.changes -%}
+- {% if change.severity == "breaking" %}🔴{% elif change.severity == "deprecated" %}🟡{% else %}🟢{% endif %}{% if change.change_type == "added" %}➕{% elif change.change_type == "removed" %}➖{% elif change.change_type == "modified" %}✏️{% endif %} {{ change.message }}{% if prop_group.property %} — `{{ prop_group.property }}`{% endif %}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endif -%}
+{% endif %}

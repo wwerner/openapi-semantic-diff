@@ -1,0 +1,329 @@
+---
+source: tests/formatter_tests.rs
+expression: output
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Diff Report</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; color: #333; }
+  h1 { border-bottom: 2px solid #e1e4e8; padding-bottom: 0.5rem; }
+  h2 { margin-top: 2rem; border-bottom: 1px solid #e1e4e8; padding-bottom: 0.3rem; font-size: 1.2rem; color: #555; }
+  h3 { margin-top: 1.2rem; margin-bottom: 0.3rem; font-size: 1.05rem; font-family: monospace; }
+  h4 { margin-top: 0.8rem; margin-bottom: 0.2rem; font-size: 0.95rem; color: #555; }
+  .summary { background: #f6f8fa; padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; }
+  .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.75rem; font-weight: 600; color: white; text-transform: uppercase; }
+  .badge-breaking { background: #d73a49; }
+  .badge-deprecated { background: #e36209; }
+  .badge-additive { background: #28a745; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+  th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #e1e4e8; font-size: 0.9rem; }
+  th { background: #f6f8fa; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: #586069; }
+  td:first-child { font-family: monospace; font-size: 0.8rem; color: #444; max-width: 300px; word-break: break-all; }
+  code { background: #f0f0f0; padding: 0.15rem 0.3rem; border-radius: 3px; font-size: 0.85em; }
+  .no-changes { text-align: center; padding: 3rem; color: #586069; }
+  .section-paths h3::before { content: "⬡ "; opacity: 0.4; }
+</style>
+</head>
+<body>
+<h1>API Diff Report</h1>
+
+<div class="summary">
+  <strong>30</strong> change(s) detected
+  | Max severity: <span class="badge badge-breaking">BREAKING</span>
+</div>
+
+<h2>Paths</h2>
+<div class="section-paths">
+<h3><code>/pets</code></h3>
+<h4>GET</h4>
+<table>
+<thead><tr><th>Property</th><th>Operation</th><th>Severity</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+  <td><code>parameters.limit.query</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>parameter 'limit' is now required</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.id.format</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>format changed from 'int64' to 'uuid'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.id.format</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] format changed from 'int64' to 'uuid'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.id.type</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>type changed from 'integer' to 'string'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.id.type</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] type changed from 'integer' to 'string'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.name</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>property 'name' removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.name</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] property 'name' removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.status.enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>enum value "sold" removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.status.enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] enum value "sold" removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.status.x-extensible-enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>enum value 'sold' removed from x-extensible-enum</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.items.properties.status.x-extensible-enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] enum value 'sold' removed from x-extensible-enum</td>
+</tr>
+<tr>
+  <td><code>responses.200.headers.X-Rate-Limit</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>response header 'X-Rate-Limit' removed</td>
+</tr>
+<tr>
+  <td><code>responses.500</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>response '500' removed</td>
+</tr>
+</tbody>
+</table>
+<h4>POST</h4>
+<table>
+<thead><tr><th>Property</th><th>Operation</th><th>Severity</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+  <td><code>requestBody.content.application/json.schema.properties.name.maxLength</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>maxLength reduced from 100 to 50</td>
+</tr>
+<tr>
+  <td><code>requestBody.content.application/json.schema.properties.name.maxLength</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: NewPet] maxLength reduced from 100 to 50</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.id.format</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>format changed from 'int64' to 'uuid'</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.id.format</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] format changed from 'int64' to 'uuid'</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.id.type</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>type changed from 'integer' to 'string'</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.id.type</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] type changed from 'integer' to 'string'</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.name</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>property 'name' removed</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.name</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] property 'name' removed</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.status.enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>enum value "sold" removed</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.status.enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] enum value "sold" removed</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.status.x-extensible-enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>enum value 'sold' removed from x-extensible-enum</td>
+</tr>
+<tr>
+  <td><code>responses.201.content.application/json.schema.properties.status.x-extensible-enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] enum value 'sold' removed from x-extensible-enum</td>
+</tr>
+</tbody>
+</table>
+<h3><code>/pets/{petId}</code></h3>
+<h4>GET</h4>
+<table>
+<thead><tr><th>Property</th><th>Operation</th><th>Severity</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.id.format</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>format changed from 'int64' to 'uuid'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.id.format</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] format changed from 'int64' to 'uuid'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.id.type</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>type changed from 'integer' to 'string'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.id.type</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] type changed from 'integer' to 'string'</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.name</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>property 'name' removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.name</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] property 'name' removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.status.enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>enum value "sold" removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.status.enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] enum value "sold" removed</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.status.x-extensible-enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>enum value 'sold' removed from x-extensible-enum</td>
+</tr>
+<tr>
+  <td><code>responses.200.content.application/json.schema.properties.status.x-extensible-enum</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>[schema: Pet] enum value 'sold' removed from x-extensible-enum</td>
+</tr>
+</tbody>
+</table>
+<h4>DELETE</h4>
+<table>
+<thead><tr><th>Property</th><th>Operation</th><th>Severity</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+  <td>—</td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>endpoint DELETE /pets/{petId} removed</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Metadata</h2>
+<h3>Info</h3>
+<table>
+<thead><tr><th>Property</th><th>Operation</th><th>Severity</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+  <td><code>description</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-additive">ADDITIVE</span></td>
+  <td>description changed</td>
+</tr>
+<tr>
+  <td><code>version</code></td>
+  <td>modified</td>
+  <td><span class="badge badge-additive">ADDITIVE</span></td>
+  <td>version changed from '1.0.0' to '2.0.0'</td>
+</tr>
+</tbody>
+</table>
+<h3>Servers</h3>
+<table>
+<thead><tr><th>Property</th><th>Operation</th><th>Severity</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+  <td><code>https://api.example.com/v1</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>server 'https://api.example.com/v1' removed</td>
+</tr>
+</tbody>
+</table>
+<h3>Security Schemes</h3>
+<table>
+<thead><tr><th>Property</th><th>Operation</th><th>Severity</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+  <td><code>apiKey</code></td>
+  <td>removed</td>
+  <td><span class="badge badge-breaking">BREAKING</span></td>
+  <td>security scheme 'apiKey' removed</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

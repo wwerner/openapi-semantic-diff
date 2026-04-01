@@ -1,0 +1,12 @@
+openapi: "3.0.3"
+info:
+  title: Test
+  version: "1.0.0"
+paths:
+  /pets/{petId}:
+    delete:
+      operationId: deletePet
+      deprecated: true
+      responses:
+        "204":
+          description: Deleted

@@ -1,0 +1,39 @@
+---
+source: tests/formatter_tests.rs
+expression: output
+---
+
+8 change(s) detected (max severity: deprecated)
+
+━━━ Paths ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/pets
+GET
+[DEPRECATED] DEPRECATED: parameters.offset.query — parameter 'offset' marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.items.properties.tag — schema marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.items.properties.tag — [schema: Pet] schema marked as deprecated
+      new: true
+POST
+[DEPRECATED] DEPRECATED: responses.201.content.application/json.schema.properties.tag — schema marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.201.content.application/json.schema.properties.tag — [schema: Pet] schema marked as deprecated
+      new: true
+/pets/{petId}
+GET
+[DEPRECATED] DEPRECATED: operation marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.properties.tag — schema marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.properties.tag — [schema: Pet] schema marked as deprecated
+      new: true
+DELETE
+[DEPRECATED] DEPRECATED: operation marked as deprecated
+      new: true
+━━━ Metadata ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Info
+[ADDITIVE] MODIFIED: version — version changed from '1.0.0' to '1.0.1'
+    old: 1.0.0
+    new: 1.0.1

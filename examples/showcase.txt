@@ -1,0 +1,120 @@
+
+39 change(s) detected (max severity: breaking)
+
+━━━ Paths ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/users
+GET
+[BREAKING] REMOVED: parameters.fields.query — parameter 'fields' (query) removed
+[BREAKING] MODIFIED: parameters.limit.query — parameter 'limit' is now required
+      new: true
+[DEPRECATED] DEPRECATED: parameters.offset.query — parameter 'offset' marked as deprecated
+      new: true
+[ADDITIVE] ADDED: parameters.sort.query — parameter 'sort' (query) added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.avatar_url — property 'avatar_url' added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.avatar_url — [schema: User] property 'avatar_url' added
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.items.properties.email.maxLength — maxLength reduced from 200 to 100
+      old: 200
+      new: 100
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.items.properties.email.maxLength — [schema: User] maxLength reduced from 200 to 100
+      old: 200
+      new: 100
+[ADDITIVE] MODIFIED: responses.200.content.application/json.schema.items.properties.email.minLength — minLength reduced from 5 to 1
+      old: 5
+      new: 1
+[ADDITIVE] MODIFIED: responses.200.content.application/json.schema.items.properties.email.minLength — [schema: User] minLength reduced from 5 to 1
+      old: 5
+      new: 1
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.name — property 'name' removed
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.name — [schema: User] property 'name' removed
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.items.properties.nickname — schema marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.items.properties.nickname — [schema: User] schema marked as deprecated
+      new: true
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.role.enum — enum value "moderator" added
+      new: moderator
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.role.enum — [schema: User] enum value "moderator" added
+      new: moderator
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.role.enum — enum value "viewer" removed
+      old: viewer
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.role.enum — [schema: User] enum value "viewer" removed
+      old: viewer
+[BREAKING] REMOVED: responses.500 — response '500' removed
+POST
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.avatar_url — property 'avatar_url' added
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.avatar_url — [schema: User] property 'avatar_url' added
+[BREAKING] MODIFIED: responses.201.content.application/json.schema.properties.email.maxLength — maxLength reduced from 200 to 100
+      old: 200
+      new: 100
+[BREAKING] MODIFIED: responses.201.content.application/json.schema.properties.email.maxLength — [schema: User] maxLength reduced from 200 to 100
+      old: 200
+      new: 100
+[ADDITIVE] MODIFIED: responses.201.content.application/json.schema.properties.email.minLength — minLength reduced from 5 to 1
+      old: 5
+      new: 1
+[ADDITIVE] MODIFIED: responses.201.content.application/json.schema.properties.email.minLength — [schema: User] minLength reduced from 5 to 1
+      old: 5
+      new: 1
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.name — property 'name' removed
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.name — [schema: User] property 'name' removed
+[DEPRECATED] DEPRECATED: responses.201.content.application/json.schema.properties.nickname — schema marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.201.content.application/json.schema.properties.nickname — [schema: User] schema marked as deprecated
+      new: true
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.role.enum — enum value "moderator" added
+      new: moderator
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.role.enum — [schema: User] enum value "moderator" added
+      new: moderator
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.role.enum — enum value "viewer" removed
+      old: viewer
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.role.enum — [schema: User] enum value "viewer" removed
+      old: viewer
+/users/{userId}
+GET
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.avatar_url — property 'avatar_url' added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.avatar_url — [schema: User] property 'avatar_url' added
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.properties.email.maxLength — maxLength reduced from 200 to 100
+      old: 200
+      new: 100
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.properties.email.maxLength — [schema: User] maxLength reduced from 200 to 100
+      old: 200
+      new: 100
+[ADDITIVE] MODIFIED: responses.200.content.application/json.schema.properties.email.minLength — minLength reduced from 5 to 1
+      old: 5
+      new: 1
+[ADDITIVE] MODIFIED: responses.200.content.application/json.schema.properties.email.minLength — [schema: User] minLength reduced from 5 to 1
+      old: 5
+      new: 1
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.name — property 'name' removed
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.name — [schema: User] property 'name' removed
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.properties.nickname — schema marked as deprecated
+      new: true
+[DEPRECATED] DEPRECATED: responses.200.content.application/json.schema.properties.nickname — [schema: User] schema marked as deprecated
+      new: true
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.role.enum — enum value "moderator" added
+      new: moderator
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.role.enum — [schema: User] enum value "moderator" added
+      new: moderator
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.role.enum — enum value "viewer" removed
+      old: viewer
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.role.enum — [schema: User] enum value "viewer" removed
+      old: viewer
+DELETE
+[DEPRECATED] DEPRECATED: operation marked as deprecated
+      new: true
+/users/{userId}/avatar
+PUT
+[BREAKING] REMOVED: endpoint PUT /users/{userId}/avatar removed
+/users/{userId}/settings
+GET
+[ADDITIVE] ADDED: endpoint GET /users/{userId}/settings added
+━━━ Metadata ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Info
+[ADDITIVE] MODIFIED: version — version changed from '1.0.0' to '2.0.0'
+    old: 1.0.0
+    new: 2.0.0
+Schemas › LegacyProfile
+[BREAKING] REMOVED: components.schemas.LegacyProfile — schema 'LegacyProfile' removed
+Schemas › Settings
+[ADDITIVE] ADDED: components.schemas.Settings — schema 'Settings' added

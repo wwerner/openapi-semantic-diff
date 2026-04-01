@@ -1,0 +1,11 @@
+openapi: "3.0.3"
+info:
+  title: Test
+  version: "1.0.0"
+paths: {}
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key

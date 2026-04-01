@@ -1,0 +1,66 @@
+{# text.tera — Plain text output template #}
+{% if grouped.total_changes == 0 -%}
+No changes detected.
+{% else -%}
+{{ grouped.total_changes }} change(s) detected (max severity: {{ grouped.max_severity }})
+
+{% if grouped.paths | length > 0 -%}
+━━━ Paths ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{% for path_group in grouped.paths -%}
+{{ path_group.route }}
+{% for verb_group in path_group.verb_groups -%}
+  {{ verb_group.verb }}
+{% for prop_group in verb_group.property_groups -%}
+{% for change in prop_group.changes -%}
+{% if prop_group.property -%}
+    [{{ change.severity | upper }}] {{ change.change_type | upper }}: {{ prop_group.property }} — {{ change.message }}
+{%- if change.old_value %}
+      old: {{ change.old_value }}
+{%- endif %}
+{%- if change.new_value %}
+      new: {{ change.new_value }}
+{%- endif %}
+{% else -%}
+    [{{ change.severity | upper }}] {{ change.change_type | upper }}: {{ change.message }}
+{%- if change.old_value %}
+      old: {{ change.old_value }}
+{%- endif %}
+{%- if change.new_value %}
+      new: {{ change.new_value }}
+{%- endif %}
+{% endif -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endif -%}
+{% if grouped.metadata | length > 0 -%}
+━━━ Metadata ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{% for meta_group in grouped.metadata -%}
+{{ meta_group.label }}
+{% for prop_group in meta_group.property_groups -%}
+{% for change in prop_group.changes -%}
+{% if prop_group.property -%}
+  [{{ change.severity | upper }}] {{ change.change_type | upper }}: {{ prop_group.property }} — {{ change.message }}
+{%- if change.old_value %}
+    old: {{ change.old_value }}
+{%- endif %}
+{%- if change.new_value %}
+    new: {{ change.new_value }}
+{%- endif %}
+{% else -%}
+  [{{ change.severity | upper }}] {{ change.change_type | upper }}: {{ change.message }}
+{%- if change.old_value %}
+    old: {{ change.old_value }}
+{%- endif %}
+{%- if change.new_value %}
+    new: {{ change.new_value }}
+{%- endif %}
+{% endif -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endif -%}
+{% endif -%}

@@ -1,0 +1,319 @@
+
+{
+  "total_changes": 39,
+  "max_severity": "breaking",
+  "changes": [
+    {
+      "path": "info.version",
+      "change_type": "modified",
+      "severity": "additive",
+      "message": "version changed from '1.0.0' to '2.0.0'",
+      "old_value": 1.0.0,
+      "new_value": 2.0.0
+    },
+    {
+      "path": "paths./users.GET.parameters.limit.query",
+      "change_type": "modified",
+      "severity": "breaking",
+      "message": "parameter 'limit' is now required",
+      "old_value": false,
+      "new_value": true
+    },
+    {
+      "path": "paths./users.GET.parameters.offset.query",
+      "change_type": "deprecated",
+      "severity": "deprecated",
+      "message": "parameter 'offset' marked as deprecated",
+      "old_value": false,
+      "new_value": true
+    },
+    {
+      "path": "paths./users.GET.parameters.fields.query",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "parameter 'fields' (query) removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.GET.parameters.sort.query",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "parameter 'sort' (query) added",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.email.maxLength",
+      "change_type": "modified",
+      "severity": "breaking",
+      "message": "maxLength reduced from 200 to 100",
+      "old_value": 200,
+      "new_value": 100
+    },
+    {
+      "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.email.minLength",
+      "change_type": "modified",
+      "severity": "additive",
+      "message": "minLength reduced from 5 to 1",
+      "old_value": 5,
+      "new_value": 1
+    },
+    {
+      "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.name",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "property 'name' removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.nickname",
+      "change_type": "deprecated",
+      "severity": "deprecated",
+      "message": "schema marked as deprecated",
+      "old_value": false,
+      "new_value": true
+    },
+    {
+      "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.role.enum",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "enum value "viewer" removed",
+      "old_value": viewer,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.role.enum",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "enum value "moderator" added",
+      "old_value": null,
+      "new_value": moderator
+    },
+    {
+      "path": "paths./users.GET.responses.200.content.application/json.schema.items.properties.avatar_url",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "property 'avatar_url' added",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.GET.responses.500",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "response '500' removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.POST.responses.201.content.application/json.schema.properties.email.maxLength",
+      "change_type": "modified",
+      "severity": "breaking",
+      "message": "maxLength reduced from 200 to 100",
+      "old_value": 200,
+      "new_value": 100
+    },
+    {
+      "path": "paths./users.POST.responses.201.content.application/json.schema.properties.email.minLength",
+      "change_type": "modified",
+      "severity": "additive",
+      "message": "minLength reduced from 5 to 1",
+      "old_value": 5,
+      "new_value": 1
+    },
+    {
+      "path": "paths./users.POST.responses.201.content.application/json.schema.properties.name",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "property 'name' removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.POST.responses.201.content.application/json.schema.properties.nickname",
+      "change_type": "deprecated",
+      "severity": "deprecated",
+      "message": "schema marked as deprecated",
+      "old_value": false,
+      "new_value": true
+    },
+    {
+      "path": "paths./users.POST.responses.201.content.application/json.schema.properties.role.enum",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "enum value "viewer" removed",
+      "old_value": viewer,
+      "new_value": null
+    },
+    {
+      "path": "paths./users.POST.responses.201.content.application/json.schema.properties.role.enum",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "enum value "moderator" added",
+      "old_value": null,
+      "new_value": moderator
+    },
+    {
+      "path": "paths./users.POST.responses.201.content.application/json.schema.properties.avatar_url",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "property 'avatar_url' added",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.email.maxLength",
+      "change_type": "modified",
+      "severity": "breaking",
+      "message": "maxLength reduced from 200 to 100",
+      "old_value": 200,
+      "new_value": 100
+    },
+    {
+      "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.email.minLength",
+      "change_type": "modified",
+      "severity": "additive",
+      "message": "minLength reduced from 5 to 1",
+      "old_value": 5,
+      "new_value": 1
+    },
+    {
+      "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.name",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "property 'name' removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.nickname",
+      "change_type": "deprecated",
+      "severity": "deprecated",
+      "message": "schema marked as deprecated",
+      "old_value": false,
+      "new_value": true
+    },
+    {
+      "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.role.enum",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "enum value "viewer" removed",
+      "old_value": viewer,
+      "new_value": null
+    },
+    {
+      "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.role.enum",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "enum value "moderator" added",
+      "old_value": null,
+      "new_value": moderator
+    },
+    {
+      "path": "paths./users/{userId}.GET.responses.200.content.application/json.schema.properties.avatar_url",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "property 'avatar_url' added",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users/{userId}.DELETE",
+      "change_type": "deprecated",
+      "severity": "deprecated",
+      "message": "operation marked as deprecated",
+      "old_value": false,
+      "new_value": true
+    },
+    {
+      "path": "paths./users/{userId}/avatar.PUT",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "endpoint PUT /users/{userId}/avatar removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "paths./users/{userId}/settings.GET",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "endpoint GET /users/{userId}/settings added",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "components.schemas.LegacyProfile",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "schema 'LegacyProfile' removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "components.schemas.User.properties.email.maxLength",
+      "change_type": "modified",
+      "severity": "breaking",
+      "message": "maxLength reduced from 200 to 100",
+      "old_value": 200,
+      "new_value": 100
+    },
+    {
+      "path": "components.schemas.User.properties.email.minLength",
+      "change_type": "modified",
+      "severity": "additive",
+      "message": "minLength reduced from 5 to 1",
+      "old_value": 5,
+      "new_value": 1
+    },
+    {
+      "path": "components.schemas.User.properties.name",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "property 'name' removed",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "components.schemas.User.properties.nickname",
+      "change_type": "deprecated",
+      "severity": "deprecated",
+      "message": "schema marked as deprecated",
+      "old_value": false,
+      "new_value": true
+    },
+    {
+      "path": "components.schemas.User.properties.role.enum",
+      "change_type": "removed",
+      "severity": "breaking",
+      "message": "enum value "viewer" removed",
+      "old_value": viewer,
+      "new_value": null
+    },
+    {
+      "path": "components.schemas.User.properties.role.enum",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "enum value "moderator" added",
+      "old_value": null,
+      "new_value": moderator
+    },
+    {
+      "path": "components.schemas.User.properties.avatar_url",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "property 'avatar_url' added",
+      "old_value": null,
+      "new_value": null
+    },
+    {
+      "path": "components.schemas.Settings",
+      "change_type": "added",
+      "severity": "additive",
+      "message": "schema 'Settings' added",
+      "old_value": null,
+      "new_value": null
+    }
+    ]
+}

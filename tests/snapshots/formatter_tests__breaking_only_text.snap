@@ -1,0 +1,99 @@
+---
+source: tests/formatter_tests.rs
+expression: output
+---
+
+28 change(s) detected (max severity: breaking)
+
+━━━ Paths ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/pets
+GET
+[BREAKING] MODIFIED: parameters.limit.query — parameter 'limit' is now required
+      new: true
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.items.properties.id.format — format changed from 'int64' to 'uuid'
+      old: int64
+      new: uuid
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.items.properties.id.format — [schema: Pet] format changed from 'int64' to 'uuid'
+      old: int64
+      new: uuid
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.items.properties.id.type — type changed from 'integer' to 'string'
+      old: integer
+      new: string
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.items.properties.id.type — [schema: Pet] type changed from 'integer' to 'string'
+      old: integer
+      new: string
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.name — property 'name' removed
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.name — [schema: Pet] property 'name' removed
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.status.enum — enum value "sold" removed
+      old: sold
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.status.enum — [schema: Pet] enum value "sold" removed
+      old: sold
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.status.x-extensible-enum — enum value 'sold' removed from x-extensible-enum
+      old: sold
+[BREAKING] REMOVED: responses.200.content.application/json.schema.items.properties.status.x-extensible-enum — [schema: Pet] enum value 'sold' removed from x-extensible-enum
+      old: sold
+[BREAKING] REMOVED: responses.200.headers.X-Rate-Limit — response header 'X-Rate-Limit' removed
+[BREAKING] REMOVED: responses.500 — response '500' removed
+POST
+[BREAKING] MODIFIED: requestBody.content.application/json.schema.properties.name.maxLength — maxLength reduced from 100 to 50
+      old: 100
+      new: 50
+[BREAKING] MODIFIED: requestBody.content.application/json.schema.properties.name.maxLength — [schema: NewPet] maxLength reduced from 100 to 50
+      old: 100
+      new: 50
+[BREAKING] MODIFIED: responses.201.content.application/json.schema.properties.id.format — format changed from 'int64' to 'uuid'
+      old: int64
+      new: uuid
+[BREAKING] MODIFIED: responses.201.content.application/json.schema.properties.id.format — [schema: Pet] format changed from 'int64' to 'uuid'
+      old: int64
+      new: uuid
+[BREAKING] MODIFIED: responses.201.content.application/json.schema.properties.id.type — type changed from 'integer' to 'string'
+      old: integer
+      new: string
+[BREAKING] MODIFIED: responses.201.content.application/json.schema.properties.id.type — [schema: Pet] type changed from 'integer' to 'string'
+      old: integer
+      new: string
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.name — property 'name' removed
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.name — [schema: Pet] property 'name' removed
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.status.enum — enum value "sold" removed
+      old: sold
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.status.enum — [schema: Pet] enum value "sold" removed
+      old: sold
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.status.x-extensible-enum — enum value 'sold' removed from x-extensible-enum
+      old: sold
+[BREAKING] REMOVED: responses.201.content.application/json.schema.properties.status.x-extensible-enum — [schema: Pet] enum value 'sold' removed from x-extensible-enum
+      old: sold
+/pets/{petId}
+GET
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.properties.id.format — format changed from 'int64' to 'uuid'
+      old: int64
+      new: uuid
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.properties.id.format — [schema: Pet] format changed from 'int64' to 'uuid'
+      old: int64
+      new: uuid
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.properties.id.type — type changed from 'integer' to 'string'
+      old: integer
+      new: string
+[BREAKING] MODIFIED: responses.200.content.application/json.schema.properties.id.type — [schema: Pet] type changed from 'integer' to 'string'
+      old: integer
+      new: string
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.name — property 'name' removed
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.name — [schema: Pet] property 'name' removed
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.status.enum — enum value "sold" removed
+      old: sold
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.status.enum — [schema: Pet] enum value "sold" removed
+      old: sold
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.status.x-extensible-enum — enum value 'sold' removed from x-extensible-enum
+      old: sold
+[BREAKING] REMOVED: responses.200.content.application/json.schema.properties.status.x-extensible-enum — [schema: Pet] enum value 'sold' removed from x-extensible-enum
+      old: sold
+DELETE
+[BREAKING] REMOVED: endpoint DELETE /pets/{petId} removed
+━━━ Metadata ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Servers
+[BREAKING] REMOVED: https://api.example.com/v1 — server 'https://api.example.com/v1' removed
+    old: https://api.example.com/v1
+Security Schemes
+[BREAKING] REMOVED: apiKey — security scheme 'apiKey' removed

@@ -1,0 +1,13 @@
+openapi: "3.0.3"
+info:
+  title: Test
+  version: "1.0.0"
+paths: {}
+components:
+  schemas:
+    NewPet:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100

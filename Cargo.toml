@@ -1,0 +1,36 @@
+[package]
+name = "openapi-semantic-diff"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "Semantic diff for OpenAPI specifications"
+license = "MIT"
+repository = "https://github.com/wwerner/openapi-semantic-diff"
+homepage = "https://github.com/wwerner/openapi-semantic-diff"
+readme = "README.md"
+keywords = ["openapi", "diff", "api", "breaking-changes", "semver"]
+categories = ["command-line-utilities", "development-tools"]
+exclude = ["tests/", "examples/", ".github/"]
+
+[[bin]]
+name = "osd"
+path = "src/main.rs"
+
+[lib]
+name = "openapi_semantic_diff"
+path = "src/lib.rs"
+
+[dependencies]
+openapiv3 = "2.2"
+oas3 = "=0.21"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yml = "0.0.12"
+tera = "1"
+clap = { version = "4", features = ["derive"] }
+thiserror = "2"
+anyhow = "1"
+indexmap = { version = "2", features = ["serde"] }
+
+[dev-dependencies]
+insta = "1"

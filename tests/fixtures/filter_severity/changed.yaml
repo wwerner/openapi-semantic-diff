@@ -1,0 +1,22 @@
+openapi: "3.0.3"
+info:
+  title: Test
+  version: "1.0.0"
+servers: []
+tags:
+  - name: pets
+  - name: toys
+paths:
+  /pets:
+    get:
+      operationId: listPets
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        id:
+          type: string

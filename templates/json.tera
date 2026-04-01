@@ -1,0 +1,17 @@
+{# json.tera — JSON output template #}
+{
+  "total_changes": {{ changes | length }},
+  "max_severity": {% if max_severity %}"{{ max_severity }}"{% else %}null{% endif %},
+  "changes": [
+    {% for change in changes -%}
+    {
+      "path": "{{ change.path }}",
+      "change_type": "{{ change.change_type }}",
+      "severity": "{{ change.severity }}",
+      "message": "{{ change.message }}",
+      "old_value": {{ change.old_value | default(value="null") }},
+      "new_value": {{ change.new_value | default(value="null") }}
+    }{% if not loop.last %},{% endif %}
+    {% endfor -%}
+  ]
+}

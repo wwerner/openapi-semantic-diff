@@ -1,0 +1,18 @@
+openapi: "3.0.3"
+info:
+  title: Test
+  version: "1.0.0"
+paths:
+  /pets:
+    get:
+      operationId: listPets
+      parameters:
+        - name: offset
+          in: query
+          required: false
+          deprecated: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK

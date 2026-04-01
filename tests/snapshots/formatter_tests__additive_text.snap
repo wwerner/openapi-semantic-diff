@@ -1,0 +1,64 @@
+---
+source: tests/formatter_tests.rs
+expression: output
+---
+
+20 change(s) detected (max severity: additive)
+
+━━━ Paths ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/pets
+GET
+[ADDITIVE] ADDED: parameters.sort.query — parameter 'sort' (query) added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.breed — property 'breed' added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.breed — [schema: Pet] property 'breed' added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.status.enum — enum value "adopted" added
+      new: adopted
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.status.enum — [schema: Pet] enum value "adopted" added
+      new: adopted
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.status.x-extensible-enum — enum value 'adopted' added to x-extensible-enum
+      new: adopted
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.items.properties.status.x-extensible-enum — [schema: Pet] enum value 'adopted' added to x-extensible-enum
+      new: adopted
+[ADDITIVE] ADDED: responses.429 — response '429' added
+[ADDITIVE] ADDED: x-custom-info — extension x-custom-info added
+      new: This endpoint supports pagination
+POST
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.breed — property 'breed' added
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.breed — [schema: Pet] property 'breed' added
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.status.enum — enum value "adopted" added
+      new: adopted
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.status.enum — [schema: Pet] enum value "adopted" added
+      new: adopted
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.status.x-extensible-enum — enum value 'adopted' added to x-extensible-enum
+      new: adopted
+[ADDITIVE] ADDED: responses.201.content.application/json.schema.properties.status.x-extensible-enum — [schema: Pet] enum value 'adopted' added to x-extensible-enum
+      new: adopted
+/pets/{petId}
+GET
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.breed — property 'breed' added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.breed — [schema: Pet] property 'breed' added
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.status.enum — enum value "adopted" added
+      new: adopted
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.status.enum — [schema: Pet] enum value "adopted" added
+      new: adopted
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.status.x-extensible-enum — enum value 'adopted' added to x-extensible-enum
+      new: adopted
+[ADDITIVE] ADDED: responses.200.content.application/json.schema.properties.status.x-extensible-enum — [schema: Pet] enum value 'adopted' added to x-extensible-enum
+      new: adopted
+/pets/{petId}/toys
+GET
+[ADDITIVE] ADDED: endpoint GET /pets/{petId}/toys added
+━━━ Metadata ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Info
+[ADDITIVE] MODIFIED: version — version changed from '1.0.0' to '1.1.0'
+    old: 1.0.0
+    new: 1.1.0
+Servers
+[ADDITIVE] ADDED: https://staging.example.com/v1 — server 'https://staging.example.com/v1' added
+    new: https://staging.example.com/v1
+Schemas › Toy
+[ADDITIVE] ADDED: components.schemas.Toy — schema 'Toy' added
+Tags
+[ADDITIVE] ADDED: toys — tag 'toys' added

@@ -1,0 +1,26 @@
+# tests/fixtures/refs/main.yaml — Main spec with cross-file $ref
+openapi: "3.0.3"
+info:
+  title: Petstore (multi-file)
+  version: "1.0.0"
+paths:
+  /pets:
+    get:
+      operationId: listPets
+      summary: List pets
+      responses:
+        "200":
+          description: A list of pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "components.yaml#/schemas/Pet"
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string

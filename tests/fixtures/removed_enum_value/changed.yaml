@@ -1,0 +1,18 @@
+openapi: "3.0.3"
+info:
+  title: Test
+  version: "1.0.0"
+paths: {}
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - available
+            - pending
+          x-extensible-enum:
+            - available
+            - pending

@@ -1,0 +1,195 @@
+# Showcase changed spec — diffing base.yaml → changed.yaml produces every
+# combination of severity × change-type across paths, parameters, and schemas.
+#
+# Legend (what changed vs. base):
+#
+#   PATHS
+#     Added + Additive ……… GET /users/{userId}/settings (new endpoint)
+#     Removed + Breaking …… PUT /users/{userId}/avatar (removed endpoint)
+#     Deprecated …………………… DELETE /users/{userId} (deprecated operation)
+#
+#   PARAMETERS
+#     Added + Additive ……… "sort" query param on GET /users
+#     Removed + Breaking …… "fields" query param on GET /users
+#     Modified + Breaking … "limit" made required on GET /users
+#     Deprecated …………………… "offset" marked deprecated on GET /users
+#
+#   SCHEMAS
+#     Added + Additive ……… Settings schema (new), User.avatar_url (new prop),
+#                            User.role enum value "moderator" (new)
+#     Removed + Breaking …… LegacyProfile schema (removed), User.name (removed prop),
+#                            User.role enum value "viewer" (removed)
+#     Modified + Breaking … User.email.maxLength reduced 200→100
+#     Modified + Additive … User.email.minLength reduced 5→1
+#     Deprecated …………………… User.nickname marked deprecated
+
+openapi: "3.0.3"
+info:
+  title: Showcase API
+  version: "2.0.0"
+
+paths:
+  /users:
+    get:
+      operationId: listUsers
+      parameters:
+        # Modified + Breaking: was optional, now required
+        - name: limit
+          in: query
+          required: true
+          schema:
+            type: integer
+        # Deprecated + Deprecated: now deprecated
+        - name: offset
+          in: query
+          required: false
+          deprecated: true
+          schema:
+            type: integer
+        # Removed + Breaking: "fields" is gone
+        # Added + Additive: new optional parameter
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+          headers:
+            X-Rate-Limit:
+              description: Rate limit
+              schema:
+                type: integer
+        # Removed + Breaking: response 500 is gone
+
+    post:
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewUser"
+      responses:
+        "201":
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+
+  /users/{userId}:
+    get:
+      operationId: getUser
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: A single user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+
+    # Deprecated + Deprecated: operation deprecated
+    delete:
+      operationId: deleteUser
+      deprecated: true
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  # Removed + Breaking: PUT /users/{userId}/avatar is gone
+
+  # Added + Additive: new endpoint
+  /users/{userId}/settings:
+    get:
+      operationId: getUserSettings
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: User settings
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Settings"
+
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - email
+        # "name" removed from required
+      properties:
+        id:
+          type: integer
+          format: int64
+        # Removed + Breaking: "name" property is gone
+        email:
+          type: string
+          # Modified + Breaking: maxLength reduced 200 → 100
+          maxLength: 100
+          # Modified + Additive: minLength reduced 5 → 1
+          minLength: 1
+        # Deprecated + Deprecated: nickname marked deprecated
+        nickname:
+          type: string
+          deprecated: true
+        role:
+          type: string
+          enum:
+            - admin
+            - editor
+            # Removed + Breaking: "viewer" is gone
+            # Added + Additive: "moderator" is new
+            - moderator
+        # Added + Additive: new property
+        avatar_url:
+          type: string
+
+    NewUser:
+      type: object
+      required:
+        - name
+        - email
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        email:
+          type: string
+
+    # Removed + Breaking: LegacyProfile is gone
+
+    # Added + Additive: new schema
+    Settings:
+      type: object
+      properties:
+        theme:
+          type: string
+        notifications:
+          type: boolean

@@ -1,0 +1,94 @@
+---
+source: tests/formatter_tests.rs
+expression: output
+---
+
+## API Changes
+
+**30** change(s) detected | Max severity: **breaking**
+
+## Paths
+
+### `/pets`
+
+#### GET
+
+- 🔴✏️ parameter 'limit' is now required — `parameters.limit.query`
+
+- 🔴✏️ format changed from 'int64' to 'uuid' — `responses.200.content.application/json.schema.items.properties.id.format`
+- 🔴✏️ [schema: Pet] format changed from 'int64' to 'uuid' — `responses.200.content.application/json.schema.items.properties.id.format`
+
+- 🔴✏️ type changed from 'integer' to 'string' — `responses.200.content.application/json.schema.items.properties.id.type`
+- 🔴✏️ [schema: Pet] type changed from 'integer' to 'string' — `responses.200.content.application/json.schema.items.properties.id.type`
+
+- 🔴➖ property 'name' removed — `responses.200.content.application/json.schema.items.properties.name`
+- 🔴➖ [schema: Pet] property 'name' removed — `responses.200.content.application/json.schema.items.properties.name`
+
+- 🔴➖ enum value "sold" removed — `responses.200.content.application/json.schema.items.properties.status.enum`
+- 🔴➖ [schema: Pet] enum value "sold" removed — `responses.200.content.application/json.schema.items.properties.status.enum`
+
+- 🔴➖ enum value 'sold' removed from x-extensible-enum — `responses.200.content.application/json.schema.items.properties.status.x-extensible-enum`
+- 🔴➖ [schema: Pet] enum value 'sold' removed from x-extensible-enum — `responses.200.content.application/json.schema.items.properties.status.x-extensible-enum`
+
+- 🔴➖ response header 'X-Rate-Limit' removed — `responses.200.headers.X-Rate-Limit`
+
+- 🔴➖ response '500' removed — `responses.500`
+
+#### POST
+
+- 🔴✏️ maxLength reduced from 100 to 50 — `requestBody.content.application/json.schema.properties.name.maxLength`
+- 🔴✏️ [schema: NewPet] maxLength reduced from 100 to 50 — `requestBody.content.application/json.schema.properties.name.maxLength`
+
+- 🔴✏️ format changed from 'int64' to 'uuid' — `responses.201.content.application/json.schema.properties.id.format`
+- 🔴✏️ [schema: Pet] format changed from 'int64' to 'uuid' — `responses.201.content.application/json.schema.properties.id.format`
+
+- 🔴✏️ type changed from 'integer' to 'string' — `responses.201.content.application/json.schema.properties.id.type`
+- 🔴✏️ [schema: Pet] type changed from 'integer' to 'string' — `responses.201.content.application/json.schema.properties.id.type`
+
+- 🔴➖ property 'name' removed — `responses.201.content.application/json.schema.properties.name`
+- 🔴➖ [schema: Pet] property 'name' removed — `responses.201.content.application/json.schema.properties.name`
+
+- 🔴➖ enum value "sold" removed — `responses.201.content.application/json.schema.properties.status.enum`
+- 🔴➖ [schema: Pet] enum value "sold" removed — `responses.201.content.application/json.schema.properties.status.enum`
+
+- 🔴➖ enum value 'sold' removed from x-extensible-enum — `responses.201.content.application/json.schema.properties.status.x-extensible-enum`
+- 🔴➖ [schema: Pet] enum value 'sold' removed from x-extensible-enum — `responses.201.content.application/json.schema.properties.status.x-extensible-enum`
+
+### `/pets/{petId}`
+
+#### GET
+
+- 🔴✏️ format changed from 'int64' to 'uuid' — `responses.200.content.application/json.schema.properties.id.format`
+- 🔴✏️ [schema: Pet] format changed from 'int64' to 'uuid' — `responses.200.content.application/json.schema.properties.id.format`
+
+- 🔴✏️ type changed from 'integer' to 'string' — `responses.200.content.application/json.schema.properties.id.type`
+- 🔴✏️ [schema: Pet] type changed from 'integer' to 'string' — `responses.200.content.application/json.schema.properties.id.type`
+
+- 🔴➖ property 'name' removed — `responses.200.content.application/json.schema.properties.name`
+- 🔴➖ [schema: Pet] property 'name' removed — `responses.200.content.application/json.schema.properties.name`
+
+- 🔴➖ enum value "sold" removed — `responses.200.content.application/json.schema.properties.status.enum`
+- 🔴➖ [schema: Pet] enum value "sold" removed — `responses.200.content.application/json.schema.properties.status.enum`
+
+- 🔴➖ enum value 'sold' removed from x-extensible-enum — `responses.200.content.application/json.schema.properties.status.x-extensible-enum`
+- 🔴➖ [schema: Pet] enum value 'sold' removed from x-extensible-enum — `responses.200.content.application/json.schema.properties.status.x-extensible-enum`
+
+#### DELETE
+
+- 🔴➖ endpoint DELETE /pets/{petId} removed
+
+## Metadata
+
+### Info
+
+- 🟢✏️ description changed — `description`
+
+- 🟢✏️ version changed from '1.0.0' to '2.0.0' — `version`
+
+### Servers
+
+- 🔴➖ server 'https://api.example.com/v1' removed — `https://api.example.com/v1`
+
+### Security Schemes
+
+- 🔴➖ security scheme 'apiKey' removed — `apiKey`
